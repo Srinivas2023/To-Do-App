@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #3D246C;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Container for the to-do list */
+.main-div {
+  text-align: center;
+}
+
+/* Header styles */
+.child-div {
+  max-width: 400px;
+  margin: 70px auto;
+}
+
+.child-div figure img {
+  width: 50px;
+  height: auto;
+}
+
+figcaption {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Input and add button styles */
+.addItems {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.addItems input {
+  flex: 1 1;
+  padding: 5px 40px;
+  /* Adjust padding */
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  text-align: left;
+  /* Align placeholder text to the left */
+}
+
+.add-btn {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+  outline: none;
+  border: none;
+  background-color: #fff;
+}
+
+.add-btn:hover {
+  transform: scale(1.2);
+  color: green;
+  outline: none;
+  border: none;
+  background-color: #fff;
+}
+
+/* Checklist styles */
+.showItems {
+  margin-top: 20px;
+  text-align: left;
+  color: #000;
+}
+
+.eachItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0E21A0;
+  transition: 1s ease-in-out;
+  color: #fff;
+}
+
+.eachItem:hover {
+  background-color: #fff;
+  color: #000;
+  transition: 1s ease-in-out;
+}
+
+.eachItem h3 {
+  flex: 1;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+}
+
+.del-btn {
+  font-size: 18px;
+  cursor: pointer;
+  color: #000;
+  transition: transform 0.3s ease-in-out;
+  margin-right: 5px;
+  margin-left: 12px;
+  /* Add margin-right to create a gap */
+}
+
+.del-btn:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+.edit-btn {
+  font-size: 18px;
+  cursor: pointer;
+  color: #000;
+  margin-left: 20px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+  outline: none;
+  border: none;
+}
+
+.edit-btn:hover {
+  color: green;
+  transform: scale(1.2);
+  margin-left: 10px;
+  outline: none;
+  border: none;
+}
+
+/* Base button styles */
+.btn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 11px 26px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+/* Button text */
+.button-text {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.btn:hover .button-text {
+  transform: rotate(360deg) scale(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.btn::after {
+  content: "Remove All";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e74c3c;
+  /* Change this to your desired hover background color */
+  color: #fff;
+  opacity: 0;
+  transform: rotate(-360deg) scale(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.btn:hover::after {
+  transform: rotate(0) scale(1);
+  opacity: 1;
+}
+
+/* Media query for screens with a maximum width of 320px */
+@media (max-width: 320px) {
+  .main-div {
+    font-size: 70%;
+    /* Decrease font size */
+  }
+
+  .addItems input {
+    width: 70%;
+  }
+
+  .eachItem h3 {
+    font-size: 14px;
+    /* Decrease text size */
+  }
+
+  .del-btn,
+  .edit-btn {
+    font-size: 14px;
+    /* Decrease icon size */
+  }
+
+  figcaption {
+    font-size: 16px;
+    /* Decrease "Add Your List Here" text size */
+  }
+}
